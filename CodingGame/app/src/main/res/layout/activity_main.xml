@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.meoagency.android.codinggame.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/sample_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coding Game 2015"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.069" />
+
+        <EditText
+            android:layout_marginTop="50dp"
+            android:id="@+id/particiants"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Participants" />
+        <EditText
+            android:id="@+id/prix"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Prix du cadeau" />
+
+        <EditText
+            android:layout_marginTop="50dp"
+            android:id="@+id/budget1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Budget 1" />
+
+        <EditText
+            android:id="@+id/budget2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Budget 2" />
+
+        <EditText
+            android:id="@+id/budget3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Budget 3" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Envoyer" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
