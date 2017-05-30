@@ -3,11 +3,14 @@ package com.meoagency.android.codinggame;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Arrays;
 
 public class MainActivity extends Activity {
 
@@ -31,7 +34,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //participants_ET = (EditText) findViewById(R.id.particiants);
+        participants_ET = (EditText) findViewById(R.id.particiants);
         prix_ET = (EditText) findViewById(R.id.prix);
 
         budget1_ET = (EditText) findViewById(R.id.budget1);
@@ -42,23 +45,29 @@ public class MainActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //participants = Integer.getInteger(participants_ET.getText().toString());
-                prix = Integer.getInteger(prix_ET.getText().toString());
-                budget1 = Integer.getInteger(budget1_ET.getText().toString());
-                budget2 = Integer.getInteger(budget2_ET.getText().toString());
-                budget3 = Integer.getInteger(budget3_ET.getText().toString());
-                Toast.makeText(getApplicationContext(), "OK"+participants, Toast.LENGTH_SHORT).show();
+                /*String partString = participants_ET.getText().toString();
+                participants = (int) Integer.valueOf(partString);*/
+                participants = 3;
+
+                String prixStr = prix_ET.getText().toString();
+                prix = (int) Integer.valueOf(prixStr);
+
+                String budgetStr = budget1_ET.getText().toString();
+                budget1 = (int) Integer.valueOf(budgetStr);
+
+                budgetStr = budget2_ET.getText().toString();
+                budget2 = (int) Integer.valueOf(budgetStr);
+
+                budgetStr = budget3_ET.getText().toString();
+                budget3 = (int) Integer.valueOf(budgetStr);
+
+                int[] resultat = codingGame(participants, prix, new int[]{budget1, budget2, budget3});
+
+                Toast.makeText(getApplicationContext(), "Resultat : " + Arrays.toString(resultat), Toast.LENGTH_SHORT).show();
             }
         });
-
-        // Example of a call to a native method
-        /*TextView tv = (TextView) findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());*/
     }
 
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    public native String stringFromJNI();
+    public native int[] codingGame(int participants, int prix, int[] budgets);
+
 }

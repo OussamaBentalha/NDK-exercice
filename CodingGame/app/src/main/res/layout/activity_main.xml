@@ -27,11 +27,15 @@
         <EditText
             android:layout_marginTop="50dp"
             android:id="@+id/particiants"
+            android:text="3"
+            android:enabled="false"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Participants" />
         <EditText
             android:id="@+id/prix"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Prix du cadeau" />
@@ -39,18 +43,21 @@
         <EditText
             android:layout_marginTop="50dp"
             android:id="@+id/budget1"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Budget 1" />
 
         <EditText
             android:id="@+id/budget2"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Budget 2" />
 
         <EditText
             android:id="@+id/budget3"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Budget 3" />
