@@ -133,21 +133,32 @@ int main(int argc, char* argv[]) {
     SDL_Event event;
     if ( SDL_PollEvent(&event) ){
         SDL_Log("-----   EVENT ---------------");
-        //SDL_Log("%c", event.type);
         switch(event.type)
         {
             case SDL_FINGERMOTION:
-                printf("SDL_FINGERMOTION");
+                SDL_Log("-----   SDL FINGER MOTION ---------------");
                 /*SDL_Log("FINGER MOTION");
                 r.x = event.motion.x;
                 r.y = event.motion.y;
                 SDL_RenderFillRect( renderer, &r );*/
                 break;
+            case SDL_FINGERDOWN:
+                SDL_Log("-----   SDL FINGER DOWN ---------------");
+                break;
+            case SDL_FINGERUP:
+                SDL_Log("-----   SDL FINGER UP ---------------");
+                break;
+            case SDL_MOUSEMOTION:
+                SDL_Log("-----   SDL MOUSE MOTION ---------------");
+                break;
             case SDL_MOUSEBUTTONDOWN:
-                printf("SDL_MOUSE BUTTON DOWN");
+                SDL_Log("-----   SDL_MOUSE BUTTON DOWN ---------------");
+                break;
+            case SDL_MOUSEBUTTONUP:
+                SDL_Log("-----   SDL_MOUSE BUTTON UP ---------------");
                 break;
             case SDL_KEYDOWN:
-                printf("SDL_MOUSE BUTTON DOWN");
+                SDL_Log("-----   SDL_KEYDOWN BUTTON DOWN ---------------");
                 break;
         }
     }
